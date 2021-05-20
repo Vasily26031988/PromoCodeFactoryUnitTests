@@ -14,8 +14,7 @@ namespace PromoCodeFactory.WebHost.Controllers
 	/// </summary>
 	[ApiController]
 	[Route("api/v1/[controller]")]
-	public class CustomerController 
-		: ControllerBase
+	public class CustomerController : ControllerBase
 	{
         private readonly IRepository<Customer> _customerRepository;
         private readonly IRepository<Preference> _preferenceRepository;
