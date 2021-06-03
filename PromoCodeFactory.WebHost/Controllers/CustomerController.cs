@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PromoCodeFactory.Core.Abstractions.Repositories;
@@ -73,7 +74,9 @@ namespace PromoCodeFactory.WebHost.Controllers
 
             await _customerRepository.AddAsync(customer);
 
-            return CreatedAtAction(nameof(GetCustomerAsync), new { id = customer.Id }, null);
+            return CreatedAtAction("CreateCustomer", new { id = customer.Id }, null);
+
+            
         }
 
         [HttpPut("{id:guid}")]

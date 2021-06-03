@@ -15,6 +15,6 @@ namespace PromoCodeFactory.WebHost.Models
 
 		public int NumberIssuedPromoCodes { get; set; }
 
-		public List<PartnerPromoCodeLimitResponse> PartnerLimits { get; set; }
-    }
+		public List<PartnerPromoCodeLimitResponse> PartnerLimits { get; set; } 
+	}
 }

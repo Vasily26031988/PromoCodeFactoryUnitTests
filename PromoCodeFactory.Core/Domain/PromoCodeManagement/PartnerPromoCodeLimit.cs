@@ -8,7 +8,7 @@ namespace PromoCodeFactory.Core.Domain.PromoCodeManagement
 	{
 		public Guid Id { get; set; }
 
-		public Guid PartnerId { get; set; }
+		public Guid PartnerId { get; set; } 
 
 		public virtual Partner Partner { get; set; }
 
@@ -19,5 +19,7 @@ namespace PromoCodeFactory.Core.Domain.PromoCodeManagement
 		public DateTime EndDate { get; set; }
 
 		public int Limit { get; set; }
+
+		
     }
 }

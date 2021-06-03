@@ -113,11 +113,16 @@ namespace PromoCodeFactory.WebHost.Controllers
                 EndDate = request.EndDate
             };
 
+            if (partner.PartnerLimits == null)
+            {
+	            partner.PartnerLimits = new List<PartnerPromoCodeLimit>();
+            }
+            
             partner.PartnerLimits.Add(newLimit);
 
             await _partnersRepository.UpdateAsync(partner);
 
-            return CreatedAtAction(nameof(GetPartnerLimitAsync), new { id = partner.Id, limitId = newLimit.Id }, null);
+            return CreatedAtAction("SetPartnerPromocodeLimit", new { id = partner.Id, limitId = newLimit.Id }, null);
         }
 
         [HttpPost("{id}/canceledLimits")]
